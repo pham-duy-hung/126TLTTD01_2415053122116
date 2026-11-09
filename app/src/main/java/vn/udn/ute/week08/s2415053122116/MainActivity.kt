@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
         val qt = binding.etScoreQT.text.toString().trim().toDoubleOrNull()
         val ck = binding.etScoreCK.text.toString().trim().toDoubleOrNull()
-        if (qt == null || qt !in 0.0..10.0 || ck == null || ck in 0.0..10.0) {
+        if (qt == null || qt !in 0.0..10.0 || ck == null || ck !in 0.0..10.0) {
             binding.tvResult.text = "loi: diem phai tu 0.0->10.0"
             return
         }
