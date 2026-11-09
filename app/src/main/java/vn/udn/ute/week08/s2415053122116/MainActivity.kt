@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.Locale
+import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
    private lateinit var binding: ActivityMainBinding
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         }
         val t = 0.4 * qt + 0.6 * ck
         val status = if (t >= 5.0 && ck >= 3.0) "Dat" else "chua dat"
+
+        val canhbao = if (abs(qt-ck)>3.0) "cảnh báo lệch điểm thi" else "Điểm cân đối"
 
         binding.tvResult.text = String.format(
             Locale.getDefault(),
